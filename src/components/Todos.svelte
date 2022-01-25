@@ -1,3 +1,27 @@
+<script>
+  // Create a list of todos for a svelte app
+  const todos = [
+    {
+      id: 1,
+      title: 'Create a Svelte starter app',
+      completed: true
+    },
+    {
+      id: 2,
+      title: 'Create your first component',
+      completed: true
+    },
+    {
+      id: 3,
+      title: 'Complete the rest of the tutorial',
+      completed: false
+    }
+  ]; 
+
+  let totalTodos = todos.length;
+  let completedTodos = todos.filter(todo => todo.completed).length; 
+</script>
+
 <!-- Todos.svelte -->
 <div class="todoapp stack-large">
 
@@ -35,7 +59,7 @@
     </div>
   
     <!-- TodosStatus -->
-    <h2 id="list-heading">2 out of 3 items completed</h2>
+    <h2 id="list-heading">{completedTodos} out of {totalTodos} items completed</h2>
   
     <!-- Todos -->
     <ul role="list" class="todo-list stack-large" aria-labelledby="list-heading">
